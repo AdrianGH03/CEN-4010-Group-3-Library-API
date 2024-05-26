@@ -1,4 +1,4 @@
-books> db.books.insertMany([
+ db.books.insertMany([
 ...   {
 ...     "Title": "The Guide to the Galaxy",
 ...     "Publisher": "Macmillan",
