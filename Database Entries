@@ -1,0 +1,74 @@
+books> db.books.insertMany([
+...   {
+...     "Title": "The Guide to the Galaxy",
+...     "Publisher": "Macmillan",
+...     "Price": Math.random() * (190) + 10,
+...     "Genre": "Science",
+...     "ISBN": "978-0345391803"
+...   },
+...   {
+...     "Title": "The Witch and the Cat",
+...     "Publisher": "Bloomsbury",
+...     "Price": Math.random() * (190) + 10,
+...     "Genre": "Science Fiction",
+...     "ISBN": "978-0345391900"
+...   },
+...   {
+...     "Title": "The Fairy",
+...     "Publisher": "Bloomsbury",
+...     "Price": Math.random() * (190) + 10,
+...     "Genre": "Science Fiction",
+...     "ISBN": "978-0345291900"
+...   },
+...   {
+...     "Title": "The Great War",
+...     "Publisher": "Dayton Press",
+...     "Price": Math.random() * (190) + 10,
+...     "Genre": "History",
+...     "ISBN": "978-345391900"
+...   },
+...   {
+...     "Title": "Love at First Light",
+...     "Publisher": "Cupid Printing",
+...     "Price": Math.random() * (190) + 10,
+...     "Genre": "Romance",
+...     "ISBN": "938-0345231820"
+...   },
+...   {
+...     "Title": "The Nightmare",
+...     "Publisher": "Thriller Bark",
+...     "Price": Math.random() * (190) + 10,
+...     "Genre": "Thriller & Suspense",
+...     "ISBN": "978-0364391803"
+...   },
+...   {
+...     "Title": "Joyboy or Nika",
+...     "Publisher": "Going Merry",
+...     "Price": Math.random() * (190) + 10,
+...     "Genre": "Fiction",
+...     "ISBN": "978-1245391923"
+...   },
+...   {
+...     "Title": "CP-0",
+...     "Publisher": "World Government",
+...     "Price": Math.random() * (190) + 10,
+...     "Genre": "Action",
+...     "ISBN": "978-0256491900"
+...   },
+...   {
+...     "Title": "I Miss You",
+...     "Publisher": "Cupid Printing",
+...     "Price": Math.random() * (190) + 10,
+...     "Genre": "Romance",
+...     "ISBN": "978-345991900"
+...   },
+...   {
+...     "Title": "The Hashira",
+...     "Publisher": "Slayer Publishing",
+...     "Price": Math.random() * (190) + 10,
+...     "Genre": "Action",
+...     "ISBN": "938-0289231900"
+...   }
+... ]
+... )
+{
