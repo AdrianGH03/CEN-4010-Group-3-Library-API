@@ -1,25 +1,17 @@
 package com.group_3.restful_group_3_project;
 
 public class Book {
-  @Id
+        @Id   
+	private String ISBN; 
 	private String id;
 	private String title;
 	private String genre;
 	private String publisher;
 	private double price;
 	private int copiesSold;
-	private String IBSN; 
 	private List<Rating> ratings;
 	
 	public Book() {}
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
 
 	public String getTitle() {
 		return title;
@@ -61,12 +53,12 @@ public class Book {
 		this.copiesSold = copiesSold;
 	}
 
-	public String getIBSN() {
+	public String getISBN() {
 		return IBSN;
 	}
 
-	public void setIBSN(String iBSN) {
-		IBSN = iBSN;
+	public void setIBSN(String iSBN) {
+		ISBN = iSBN;
 	}
 
 	public List<Rating> getRatings() {
@@ -80,7 +72,7 @@ public class Book {
 	@Override
 	public String toString() {
 		return "Book [id=" + id + ", title=" + title + ", genre=" + genre + ", publisher=" + publisher + ", price="
-				+ price + ", copiesSold=" + copiesSold + ", IBSN=" + IBSN + "]";
+				+ price + ", copiesSold=" + copiesSold + ", ISBN=" + ISBN + "]";
 	}
 
 }
