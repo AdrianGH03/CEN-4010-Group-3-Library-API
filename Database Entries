@@ -1,6 +1,6 @@
  db.book.insertMany([
     {
-        "isbn": "978-0345391803",
+        "_id": "978-0345391803",
         "title": "The Guide to the Galaxy",
         "genre": "Science",
         "publisher": "Macmillan",
@@ -10,7 +10,7 @@
         "comments": []
     },
     {
-        "isbn": "978-0345391900",
+        "_id": "978-0345391900",
         "title": "The Witch and the Cat",
         "genre": "Science Fiction",
         "publisher": "Bloomsbury",
@@ -20,7 +20,7 @@
         "comments": []
     },
     {
-        "isbn": "978-0345291900",
+        "_id": "978-0345291900",
         "title": "The Fairy",
         "genre": "Science Fiction",
         "publisher": "Bloomsbury",
@@ -30,7 +30,7 @@
         "comments": []
     },
     {
-        "isbn": "978-345391900",
+        "_id": "978-345391900",
         "title": "The Great War",
         "genre": "History",
         "publisher": "Dayton Press",
@@ -40,7 +40,7 @@
         "comments": []
     },
     {
-        "isbn": "938-0345231820",
+        "_id": "938-0345231820",
         "title": "Love at First Light",
         "genre": "Romance",
         "publisher": "Cupid Printing",
@@ -50,7 +50,7 @@
         "comments": []
     },
     {
-        "isbn": "978-0364391803",
+        "_id": "978-0364391803",
         "title": "The Nightmare",
         "genre": "Thriller & Suspense",
         "publisher": "Thriller Bark",
@@ -60,7 +60,7 @@
         "comments": []
     },
     {
-        "isbn": "978-1245391923",
+        "_id": "978-1245391923",
         "title": "Joyboy or Nika",
         "genre": "Fiction",
         "publisher": "Going Merry",
@@ -70,7 +70,7 @@
         "comments": []
     },
     {
-        "isbn": "978-0256491900",
+        "_id": "978-0256491900",
         "title": "CP-0",
         "genre": "Action",
         "publisher": "World Government",
@@ -80,7 +80,7 @@
         "comments": []
     },
     {
-        "isbn": "978-345991900",
+        "_id": "978-345991900",
         "title": "I Miss You",
         "genre": "Romance",
         "publisher": "Cupid Printing",
@@ -90,7 +90,7 @@
         "comments": []
     },
     {
-        "isbn": "938-0289231900",
+        "_id": "938-0289231900",
         "title": "The Hashira",
         "genre": "Action",
         "publisher": "Slayer Publishing",
