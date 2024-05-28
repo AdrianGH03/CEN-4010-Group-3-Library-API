@@ -15,7 +15,18 @@ public class BookService {
     public BookService(BookRepository bookRepository) {
         this.bookRepository = bookRepository; 
     }
-    
+      
+    public void rateBookService(String isbn, Rating rating) {
+    	Book potentialBook = bookRepository.findByIsbn(isbn); //user the findMyIsbn Method to check whether a book exists in the repository
+    	if(potentialBook != null) {   //if the book exists
+    		rating.setRatedOn(LocalDate.now());  //set the date field in rating to the current date
+    		potentialBook.addRating(rating);   
+    	    bookRepository.save(potentialBook);  //save the updates to the repository
+    	}else {
+    		throw new NoSuchElementException("No books match this ISBN");  
+    	}
+    }
+
     
 	
     
