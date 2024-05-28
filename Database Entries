@@ -1,74 +1,104 @@
- db.books.insertMany([
-...   {
-...     "Title": "The Guide to the Galaxy",
-...     "Publisher": "Macmillan",
-...     "Price": Math.random() * (190) + 10,
-...     "Genre": "Science",
-...     "ISBN": "978-0345391803"
-...   },
-...   {
-...     "Title": "The Witch and the Cat",
-...     "Publisher": "Bloomsbury",
-...     "Price": Math.random() * (190) + 10,
-...     "Genre": "Science Fiction",
-...     "ISBN": "978-0345391900"
-...   },
-...   {
-...     "Title": "The Fairy",
-...     "Publisher": "Bloomsbury",
-...     "Price": Math.random() * (190) + 10,
-...     "Genre": "Science Fiction",
-...     "ISBN": "978-0345291900"
-...   },
-...   {
-...     "Title": "The Great War",
-...     "Publisher": "Dayton Press",
-...     "Price": Math.random() * (190) + 10,
-...     "Genre": "History",
-...     "ISBN": "978-345391900"
-...   },
-...   {
-...     "Title": "Love at First Light",
-...     "Publisher": "Cupid Printing",
-...     "Price": Math.random() * (190) + 10,
-...     "Genre": "Romance",
-...     "ISBN": "938-0345231820"
-...   },
-...   {
-...     "Title": "The Nightmare",
-...     "Publisher": "Thriller Bark",
-...     "Price": Math.random() * (190) + 10,
-...     "Genre": "Thriller & Suspense",
-...     "ISBN": "978-0364391803"
-...   },
-...   {
-...     "Title": "Joyboy or Nika",
-...     "Publisher": "Going Merry",
-...     "Price": Math.random() * (190) + 10,
-...     "Genre": "Fiction",
-...     "ISBN": "978-1245391923"
-...   },
-...   {
-...     "Title": "CP-0",
-...     "Publisher": "World Government",
-...     "Price": Math.random() * (190) + 10,
-...     "Genre": "Action",
-...     "ISBN": "978-0256491900"
-...   },
-...   {
-...     "Title": "I Miss You",
-...     "Publisher": "Cupid Printing",
-...     "Price": Math.random() * (190) + 10,
-...     "Genre": "Romance",
-...     "ISBN": "978-345991900"
-...   },
-...   {
-...     "Title": "The Hashira",
-...     "Publisher": "Slayer Publishing",
-...     "Price": Math.random() * (190) + 10,
-...     "Genre": "Action",
-...     "ISBN": "938-0289231900"
-...   }
-... ]
-... )
-{
+ db.book.insertMany([
+    {
+        "isbn": "978-0345391803",
+        "title": "The Guide to the Galaxy",
+        "genre": "Science",
+        "publisher": "Macmillan",
+        "price": Math.random() * (190) + 10,
+        "copiesSold": "20",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "isbn": "978-0345391900",
+        "title": "The Witch and the Cat",
+        "genre": "Science Fiction",
+        "publisher": "Bloomsbury",
+        "price": Math.random() * (190) + 10,
+        "copiesSold": "30",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "isbn": "978-0345291900",
+        "title": "The Fairy",
+        "genre": "Science Fiction",
+        "publisher": "Bloomsbury",
+        "price": Math.random() * (190) + 10,
+        "copiesSold": "25",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "isbn": "978-345391900",
+        "title": "The Great War",
+        "genre": "History",
+        "publisher": "Dayton Press",
+        "price": Math.random() * (190) + 10,
+        "copiesSold": "40",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "isbn": "938-0345231820",
+        "title": "Love at First Light",
+        "genre": "Romance",
+        "publisher": "Cupid Printing",
+        "price": Math.random() * (190) + 10,
+        "copiesSold": "50",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "isbn": "978-0364391803",
+        "title": "The Nightmare",
+        "genre": "Thriller & Suspense",
+        "publisher": "Thriller Bark",
+        "price": Math.random() * (190) + 10,
+        "copiesSold": "35",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "isbn": "978-1245391923",
+        "title": "Joyboy or Nika",
+        "genre": "Fiction",
+        "publisher": "Going Merry",
+        "price": Math.random() * (190) + 10,
+        "copiesSold": "15",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "isbn": "978-0256491900",
+        "title": "CP-0",
+        "genre": "Action",
+        "publisher": "World Government",
+        "price": Math.random() * (190) + 10,
+        "copiesSold": "22",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "isbn": "978-345991900",
+        "title": "I Miss You",
+        "genre": "Romance",
+        "publisher": "Cupid Printing",
+        "price": Math.random() * (190) + 10,
+        "copiesSold": "28",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "isbn": "938-0289231900",
+        "title": "The Hashira",
+        "genre": "Action",
+        "publisher": "Slayer Publishing",
+        "price": Math.random() * (190) + 10,
+        "copiesSold": "33",
+        "ratings": [],
+        "comments": []
+    }
+]
+)
+
