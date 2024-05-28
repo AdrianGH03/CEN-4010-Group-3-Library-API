@@ -15,6 +15,11 @@ private BookService bookService;
 	public BookController(BookService bookService) {
 		this.bookService = bookService;
 	}
+
+        @PostMapping(path="books/{isbn}/rate")
+	public void rateBook(@PathVariable String isbn, @RequestBody Rating rating) {
+		bookService.rateBookService(isbn,rating);
+	}
 		
 
 
