@@ -1,7 +1,7 @@
 package com.group_3.restful_group_3_project;
 
 public class WishList {
-
+        @id
   	String userId;
 	String wishListName;
 	List<Book>book;
