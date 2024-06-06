@@ -12,8 +12,7 @@
 How to run:
 1. Clone the repository
 2. Open the project in IntelliJ or your preferred IDE
-3. Get your MongoDB URI from MongoDB Compass after you've created a Cluster. It should look something like this:
-    mongodb+srv://<username>:<password>@<cluster>/<database>
+3. Get your MongoDB URI from MongoDB Compass after you've created a Cluster. It should look something like this: "mongodb+srv://<username>:<password>@<cluster>/<database>"
 
 4. Create .env file in resources folder of Library_API and add the following line (not last line):
     - MONGO_DATABASE=<yourDatabaseName>
