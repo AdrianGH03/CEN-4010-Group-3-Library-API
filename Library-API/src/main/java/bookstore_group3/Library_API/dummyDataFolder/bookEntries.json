@@ -1,0 +1,104 @@
+[
+    {
+        "_id": "978-0345391803",
+        "title": "The Guide to the Galaxy",
+        "genre": "Science",
+        "publisher": "Macmillan",
+        "price": 20.00,
+        "copiesSold": "20",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "_id": "978-0345391900",
+        "title": "The Witch and the Cat",
+        "genre": "Science Fiction",
+        "publisher": "Bloomsbury",
+        "price":  25.00,
+        "copiesSold": "30",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "_id": "978-0345291900",
+        "title": "The Fairy",
+        "genre": "Science Fiction",
+        "publisher": "Bloomsbury",
+        "price": 25.00,
+        "copiesSold": "25",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "_id": "978-345391900",
+        "title": "The Great War",
+        "genre": "History",
+        "publisher": "Dayton Press",
+        "price":  30.00,
+        "copiesSold": "40",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "_id": "938-0345231820",
+        "title": "Love at First Light",
+        "genre": "Romance",
+        "publisher": "Cupid Printing",
+        "price":  15.00,
+        "copiesSold": "50",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "_id": "978-0364391803",
+        "title": "The Nightmare",
+        "genre": "Thriller & Suspense",
+        "publisher": "Thriller Bark",
+        "price":  20.00,
+        "copiesSold": "35",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "_id": "978-1245391923",
+        "title": "Joyboy or Nika",
+        "genre": "Fiction",
+        "publisher": "Going Merry",
+        "price":  20.00,
+        "copiesSold": "15",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "_id": "978-0256491900",
+        "title": "CP-0",
+        "genre": "Action",
+        "publisher": "World Government",
+        "price":  25.00,
+        "copiesSold": "22",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "_id": "978-345991900",
+        "title": "I Miss You",
+        "genre": "Romance",
+        "publisher": "Cupid Printing",
+        "price":  15.00,
+        "copiesSold": "28",
+        "ratings": [],
+        "comments": []
+    },
+    {
+        "_id": "938-0289231900",
+        "title": "The Hashira",
+        "genre": "Action",
+        "publisher": "Slayer Publishing",
+        "price":  25.00,
+        "copiesSold": "33",
+        "ratings": [],
+        "comments": []
+    }
+]
+
+

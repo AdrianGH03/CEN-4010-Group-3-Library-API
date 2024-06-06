@@ -1,1 +1,0 @@
-db.users.insertOne({"_id": "tom123", "name": "Tom", "password": "password123!", "email": "tom@gmail.com", "wishlist:", [] })
