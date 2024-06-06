@@ -14,7 +14,7 @@ How to run:
 2. Open the project in IntelliJ or your preferred IDE
 3. Get your MongoDB URI from MongoDB Compass after you've created a Cluster. It should look something like this: "mongodb+srv://<username>:<password>@<cluster>/<database>"
 
-4. Create .env file in resources folder of Library_API and add the following line (not last line):
+4. Create .env file in resources folder of Library_API and add the following lines and fill them in with the parts from the last line example:
     - MONGO_DATABASE=<yourDatabaseName>
     - MONGO_USER=<yourDatabaseUsername>
     - MONGO_PASSWORD=<yourDatabasePassword>
