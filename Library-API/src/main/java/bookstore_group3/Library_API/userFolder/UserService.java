@@ -16,6 +16,6 @@ public class UserService {
     }
 
     public Optional<User> singleUser(String userID){
-        return userRepository.findUserBy_id(userID);
+        return userRepository.findUserByUserID(userID);
     }
 }
