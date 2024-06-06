@@ -16,13 +16,12 @@ How to run:
     mongodb+srv://<username>:<password>@<cluster>/<database>
 
 4. Create .env file in resources folder of Library_API and add the following line:
-    MONGO_DATABASE=<yourDatabaseName>
-    MONGO_USER=<yourDatabaseUsername>
-    MONGO_PASSWORD=<yourDatabasePassword>
-    MONGO_CLUSTER=<yourDatabasePassword>
-
-    MongoDB URI Example: mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_CLUSTER}/
-
+    - MONGO_DATABASE=<yourDatabaseName>
+    - MONGO_USER=<yourDatabaseUsername>
+    - MONGO_PASSWORD=<yourDatabasePassword>
+    - MONGO_CLUSTER=<yourDatabasePassword>
+    - MongoDB URI Example: mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_CLUSTER}/
+      
 5. Go to database in MongoDB Compass and create two new collections, one called "books" and the other called "users"
 6. Import the dummy data from the dummyData folder into the respective collections
 7. Run the project and test desired endpoints in Postman or localhost:8080
