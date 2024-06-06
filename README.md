@@ -24,4 +24,4 @@ How to run:
       
 5. Go to database in MongoDB Compass and create two new collections, one called "books" and the other called "users"
 6. Import the dummy data from the dummyData folder into the respective collections
-7. Run the project and test desired endpoints in Postman or localhost:8080
+7. Run the project from "src/main/java/bookstore_group3/Library_API/LibraryApiApplication.java" and test desired endpoints in Postman or localhost:8080
