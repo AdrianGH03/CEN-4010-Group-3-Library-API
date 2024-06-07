@@ -8,12 +8,13 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import bookstore_group3.Library_API.bookFolder.Book;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Data // Lombok annotation to create all the getters, setters, equals, hash, and toString methods
+@NoArgsConstructor // Lombok annotation to create a no args constructor
+@AllArgsConstructor // Lombok annotation to create a all args constructor
 public class WishList {
-    @Id
+    @Id // Annotation to specify the primary key of the document
     private String userID;
+    
     private String wishListName;
     private List<Book> book;
 }

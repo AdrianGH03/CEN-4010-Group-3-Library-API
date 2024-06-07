@@ -6,7 +6,7 @@ import java.util.NoSuchElementException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service // Annotation to specify that this class is a service and will hold the business logic
 public class BookService {
 
     @Autowired

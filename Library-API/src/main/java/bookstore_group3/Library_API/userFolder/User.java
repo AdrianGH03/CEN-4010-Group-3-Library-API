@@ -10,10 +10,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Document(collection = "users")
+@Data // Lombok annotation to create all the getters, setters, equals, hash, and toString methods
+@NoArgsConstructor // Lombok annotation to create a no args constructor
+@AllArgsConstructor // Lombok annotation to create a all args constructor
+@Document(collection = "users") // Annotation to specify the collection name in MongoDB
 public class User {
     @Id
     private String _id;

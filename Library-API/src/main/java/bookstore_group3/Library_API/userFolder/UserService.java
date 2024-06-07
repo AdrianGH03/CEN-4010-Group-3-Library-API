@@ -7,7 +7,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service // Annotation to specify that this class is a service and will hold the business logic
 public class UserService {
     @Autowired
     private UserRepository userRepository;
