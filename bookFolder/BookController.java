@@ -1,4 +1,4 @@
-package com.group_3.restful_group_3_project;
+package com.group_3.restful_group_3_project.bookFolder;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

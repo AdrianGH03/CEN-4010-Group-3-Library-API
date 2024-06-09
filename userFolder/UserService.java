@@ -1,4 +1,4 @@
-package com.group_3.restful_group_3_project;
+package com.group_3.restful_group_3_project.userFolder;
 
 import java.util.List;
 import java.util.Optional;
