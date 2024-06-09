@@ -1,78 +1,31 @@
 package com.group_3.restful_group_3_project;
 
+import java.util.List;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import bookstore_group3.Library_API.reviewFolder.Rating;
+
+@Data // Lombok annotation to create all the getters, setters, equals, hash, and toString methods
+@NoArgsConstructor // Lombok annotation to create a no args constructor
+@AllArgsConstructor // Lombok annotation to create a all args constructor
+@Document(collection = "books") // Annotation to specify the collection name in MongoDB
 public class Book {
-        @Id   
-	private String ISBN; 
+    @Id  // Annotation to specify the primary key of the document
 	private String id;
-	private String title;
-	private String genre;
-	private String publisher;
-	private double price;
-	private int copiesSold;
-	private List<Rating> ratings;
-	
-	public Book() {}
 
-	public String getTitle() {
-		return title;
-	}
+    private String ISBN; 
+    private String title;
+    private String genre;
+    private String publisher;
+    private double price;
+    private int copiesSold;
+    private List<Rating> ratings;
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	public String getGenre() {
-		return genre;
-	}
-
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
-
-	public String getPublisher() {
-		return publisher;
-	}
-
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
-	}
-
-	public double getPrice() {
-		return price;
-	}
-
-	public void setPrice(double price) {
-		this.price = price;
-	}
-
-	public int getCopiesSold() {
-		return copiesSold;
-	}
-
-	public void setCopiesSold(int copiesSold) {
-		this.copiesSold = copiesSold;
-	}
-
-	public String getISBN() {
-		return IBSN;
-	}
-
-	public void setIBSN(String iSBN) {
-		ISBN = iSBN;
-	}
-
-	public List<Rating> getRatings() {
-		return ratings;
-	}
-
-	public void setRatings(List<Rating> ratings) {
-		this.ratings = ratings;
-	}
-
-	@Override
-	public String toString() {
-		return "Book [id=" + id + ", title=" + title + ", genre=" + genre + ", publisher=" + publisher + ", price="
-				+ price + ", copiesSold=" + copiesSold + ", ISBN=" + ISBN + "]";
-	}
-
+    public void addRating(Rating rating) {
+        ratings.add(rating);
+    }
 }
