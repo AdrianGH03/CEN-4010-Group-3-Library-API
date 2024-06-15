@@ -1,6 +1,9 @@
 ---------------------------------
 MongoDB + SpringBoot Backend Notes + Tutorial with Frontend and Backend examples
+<<<<<<< HEAD
 
+=======
+>>>>>>> d3f213d03255f039b10a712938c3047f38ee9a22
 ----------------------------------
 
 
@@ -16,6 +19,28 @@ Q What is getMapping and postMapping in Springboot?
 - postMapping is for sending data to the server
 - basically they are post and get requests in Springboot
 
+<<<<<<< HEAD
+=======
+Q All CRUD (Create, Read, Update, Delete) operations in Springboot?
+- Create - POST request @PostMapping
+- Read - GET request @GetMapping
+- Update - PUT request @PutMapping
+- Delete - DELETE request @DeleteMapping
+
+Q What does Lombok do?
+- Lombok is a library that helps reduce boilerplate code in Java
+- Lombok provides annotations to generate getters, setters, constructors, and more
+
+Q What does SpringBoot Dev Tools do?
+- SpringBoot Dev Tools is a set of tools that help improve the development experience
+- Dev Tools provides features like automatic restart, live reload, and more
+
+Q What does SpringBoot Web Starter do?
+- SpringBoot Web Starter is a starter that provides the necessary dependencies to build web applications
+- Web Starter includes dependencies like Spring MVC, Tomcat, and more
+
+
+>>>>>>> d3f213d03255f039b10a712938c3047f38ee9a22
 Q What is the difference between @RestController and @Controller in Springboot?
 - @RestController is used to create RESTful web services
 - @Controller is used to create web applications
