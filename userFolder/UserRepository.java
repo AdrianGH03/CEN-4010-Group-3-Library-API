@@ -7,5 +7,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository // Annotation to specify that this class is a repository, which connects to the database
 public interface UserRepository extends MongoRepository<User, String>{
-    Optional<User> findUserByUserID(String userID);
+    Optional<User> findUserByUsername(String username);
+    Optional<User> findUserByUsernameAndPassword(String username, String password);
+    
 }
