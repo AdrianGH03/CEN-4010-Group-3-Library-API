@@ -1,44 +1,13 @@
-<<<<<<< HEAD
-6/6/24 CHANGELOG MiguelsBranch
-- Used Spring initialzr to get running project and placed folders inside main program. 
-- Changed package names to match spring initialzr package name
-- Converted class constructors into Lombok (creates getters, setters, toString, etc. automatically) to reduce boilerplate.
-- Converted book and user dummy data to JSON for easy import into MongoDB Compass
-- Added more dummy users for testing and created test endpoints for getting all users and getting a user by _id
-- Changed variables to match as Java wanted specifics (I.e. isbn -> ISBN in some cases).
-- Created userID as it just had _id, which may be confusing, (i.e. a book can have an _id), but _id will still remain as the object identifying ID.
-- Moved dummyData into own subfolder
-- Added more dummy data for testing
-
-How to run:
-1. Clone the repository
-2. Open the project in IntelliJ or your preferred IDE
-3. Get your MongoDB URI from MongoDB Compass after you've created a Cluster. It should look something like this: "mongodb+srv://<username>:<password>@<cluster>/<database>"
-
-4. Create .env file in resources folder of Library_API and add the following lines and fill them in with the parts from the last line example:
-    - MONGO_DATABASE=<yourDatabaseName>
-    - MONGO_USER=<yourDatabaseUsername>
-    - MONGO_PASSWORD=<yourDatabasePassword>
-    - MONGO_CLUSTER=<yourDatabasePassword>
-    - MongoDB URI Example: mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_CLUSTER}/
-      
-5. Go to database in MongoDB Compass and create two new collections, one called "books" and the other called "users"
-6. Import the dummy data from the dummyData folder into the respective collections
-7. Run the project from "src/main/java/bookstore_group3/Library_API/LibraryApiApplication.java" and test desired endpoints in Postman or localhost:8080
-=======
-
-
 # **Project Overview**
 
 Geek Text is an online bookstore API designed to support an application targeting a niche in technology books. This API allows users to browse and sort books, manage their profiles, handle shopping cart operations, view book details, rate and comment on books, and manage wishlists.
 
   ![enter image description here](https://www.shareicon.net/data/256x256/2016/07/31/804508_book_512x512.png)
 
-**
+
 
 ## Features
 
-**
 
  - Book Browsing and Sorting
  - Retrieve List of Books by Genre: Allows users to get a list of books    within a specific genre.
@@ -141,4 +110,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Alejandra Dutton
 - Miguel Adrian Gomez
 - Christian Gonzalez
->>>>>>> d3f213d03255f039b10a712938c3047f38ee9a22
+
