@@ -16,10 +16,9 @@ import lombok.NoArgsConstructor;
 @Document(collection = "users") // Annotation to specify the collection name in MongoDB
 public class User {
     @Id
-    private String _id;
-    
     private String userID;
-    private String name;
+    
+    private String username;
     private String password;
     private String email;
     private ArrayList<String> wishlist;

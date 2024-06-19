@@ -15,15 +15,19 @@ import com.group_3.restful_group_3_project.reviewFolder.Rating;
 @Document(collection = "books") // Annotation to specify the collection name in MongoDB
 public class Book {
     @Id  // Annotation to specify the primary key of the document
-	private String id;
+    private String isbn; 
 
-    private String ISBN; 
     private String title;
     private String genre;
     private String publisher;
     private double price;
     private int copiesSold;
+    private List<Comment> comments;
     private List<Rating> ratings;
+    private int yearPublished;
+    private String author;
+    private String description;
+
 
     public void addRating(Rating rating) {
         ratings.add(rating);

@@ -1,6 +1,6 @@
-[{"userID": "tom123", "name": "Tom", "password": "password123!", "email": "tom@gmail.com", "wishlist": [] }, 
-{"userID": "jerry123", "name": "Jerry", "password": "password123!", "email": "jerry@gmail.com", "wishlist": [] }, 
-{"userID": "spongebob123", "name": "Spongebob", "password": "password123!", "email": "spongebob@gmail.com", "wishlist": [] }, 
-{"userID": "patrick123", "name": "Patrick", "password": "password123!", "email": "patrick@gmail.com", "wishlist": [] }, 
-{"userID": "squidward123", "name": "Squidward", "password": "password123!", "email": "squidward@gmail.com", "wishlist": [] }
+[{"userID": "tom123", "username": "Tom", "password": "password123!", "email": "tom@gmail.com", "wishlist": [] }, 
+{"userID": "jerry123", "username": "Jerry", "password": "password123!", "email": "jerry@gmail.com", "wishlist": [] }, 
+{"userID": "spongebob123", "username": "Spongebob", "password": "password123!", "email": "spongebob@gmail.com", "wishlist": [] }, 
+{"userID": "patrick123", "username": "Patrick", "password": "password123!", "email": "patrick@gmail.com", "wishlist": [] }, 
+{"userID": "squidward123", "username": "Squidward", "password": "password123!", "email": "squidward@gmail.com", "wishlist": [] }
 ]
