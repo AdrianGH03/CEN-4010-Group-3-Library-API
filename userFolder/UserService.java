@@ -26,7 +26,7 @@ public class UserService {
         User newUser = new User();
 
         try {
-            newUser.setUserID(UUID.randomUUID().toString()); 
+            newUser.setUserID(user.getUsername()+"123"); 
             newUser.setUsername(user.getUsername());
             newUser.setPassword(user.getPassword());
             newUser.setEmail(user.getEmail());
