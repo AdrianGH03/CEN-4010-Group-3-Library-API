@@ -24,3 +24,4 @@ public class User {
     private ArrayList<String> wishlist;
     private CreditCard creditCard;
 }
+

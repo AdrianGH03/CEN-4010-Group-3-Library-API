@@ -12,8 +12,8 @@ public class ReviewController {
     @Autowired
     private ReviewService bookService;
         
-    @PostMapping(path="books/{ISBN}/rate") // Endpoint to rate a book (i.e. http://localhost:8080/books/1234567890123/rate)
-    public void rateBook(@PathVariable String ISBN, @RequestBody Rating rating) {
-        bookService.rateBookService(ISBN,rating);
+    @PostMapping(path="books/{isbn}/rate") // Endpoint to rate a book (i.e. http://localhost:8080/books/1234567890123/rate)
+    public void rateBook(@PathVariable String isbn, @RequestBody Rating rating) {
+        bookService.rateBookService(isbn,rating);
     }
 }

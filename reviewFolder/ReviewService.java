@@ -15,9 +15,9 @@ public class ReviewService {
 	
     
     // Method to rate a book and save the rating to the database
-    public void rateBookService(String ISBN, Rating rating) {
+    public void rateBookService(String isbn, Rating rating) {
     	
-    	Book potentialBook = bookRepository.findByISBN(ISBN);
+    	Book potentialBook = bookRepository.findByIsbn(isbn);
     	if(potentialBook != null) {
     		rating.setRatedOn(LocalDate.now());
 			rating.setStarRating(rating.getStarRating());
