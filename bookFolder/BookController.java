@@ -7,10 +7,38 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController // Annotation to specify that this class is a controller and will hold the endpoints (CRUD operations)
+@RestController
+@RequestMapping("/api/books")
 public class BookController {
 
-	@Autowired 
-	private BookService bookService;
+    private final BookService bookService;
 
+    @Autowired
+    public BookController(BookService bookService) {
+        this.bookService = bookService;
+    }
+    
+    @PostMapping
+    public ResponseEntity<Book> addBook(@RequestBody Book book) {
+        if (book == null) {
+            throw new IllegalArgumentException("Request body is missing or malformed");
+        }
+        Book savedBook = bookService.addBook(book);
+        return new ResponseEntity<>(savedBook, HttpStatus.CREATED);
+    }
+    
+    @GetMapping("/{isbn}")
+    public ResponseEntity<Book> getBookByIsbn(@PathVariable String isbn) {
+        Book book = bookService.getBookByIsbn(isbn);
+        if (book != null) {
+            return new ResponseEntity<>(book, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
 }
