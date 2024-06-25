@@ -1,48 +1,26 @@
-package com.group_3.restful_group_3_project;
+package com.group_3.restful_group_3_project.userFolder;
 
+import java.util.ArrayList;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Data // Lombok annotation to create all the getters, setters, equals, hash, and toString methods
+@NoArgsConstructor // Lombok annotation to create a no args constructor
+@AllArgsConstructor // Lombok annotation to create a all args constructor
+@Document(collection = "users") // Annotation to specify the collection name in MongoDB
 public class User {
-  String username;
-	String password;
-	String userID;
-	CreditCard creditCard;
-	
-	public User() {}
-		
-	
-	
-	public User(String username, String password, String userID, CreditCard creditCard) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.userID = userID;
-		this.creditCard = creditCard;
-	}
-	public String getUsername() {
-		return username;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getUserID() {
-		return userID;
-	}
-	public void setUserID(String userID) {
-		this.userID = userID;
-	}
-	public CreditCard getCreditCard() {
-		return creditCard;
-	}
-	public void setCreditCard(CreditCard creditCard) {
-		this.creditCard = creditCard;
-	}
-	
-	
-	
-
+    @Id
+    private String userID;
+    
+    private String username;
+    private String password;
+    private String email;
+    private ArrayList<String> wishlist;
+    private CreditCard creditCard;
 }

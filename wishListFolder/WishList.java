@@ -1,6 +1,5 @@
 package com.group_3.restful_group_3_project.wishListFolder;
 
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,14 +17,12 @@ private String wishListName;
 private List<String> books = new ArrayList<>();
 
 public WishList(String userID, String wishListName) {
-super();
-this.userID = userID;
-this.wishListName = wishListName;
+    super();
+    this.userID = userID;
+    this.wishListName = wishListName;
 }
 
     public void addBook(String title) {
         this.books.add(title);
     }
-   
-
 }
