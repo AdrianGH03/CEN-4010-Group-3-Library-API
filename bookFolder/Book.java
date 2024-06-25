@@ -32,4 +32,8 @@ public class Book {
     public void addRating(Rating rating) {
         ratings.add(rating);
     }
+
+    public void addComment(Comment comment) {
+		this.comments.add(comment);	
+	}
 }
