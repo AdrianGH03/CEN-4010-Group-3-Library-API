@@ -1,50 +1,28 @@
-package com.group_3.restful_group_3_project;
+package com.group_3.restful_group_3_project.wishListFolder;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data // Lombok annotation to create all the getters, setters, equals, hash, and toString methods
+@NoArgsConstructor // Lombok annotation to create a no args constructor
+@AllArgsConstructor // Lombok annotation to create a all args constructor
 
 public class WishList {
-        @id
-  	String userId;
-	String wishListName;
-	List<Book>book;
-	
-	
-	public WishList() {
-		super();
-	}
-	
-	public WishList(String userId, String wishListName, List<Book> book) {
-		super();
-		this.userId = userId;
-		this.wishListName = wishListName;
-		this.book = book;
-	}
-	
-	public String getUserId() {
-		return userId;
-	}
-	
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-	
-	public String getWishListName() {
-		return wishListName;
-	}
-	
-	public void setWishListName(String wishListName) {
-		this.wishListName = wishListName;
-	}
-	
-	public List<Book> getBook() {
-		return book;
-	}
-	
-	public void setBook(List<Book> book) {
-		this.book = book;
-	}
-	
-	
-	
-	
+private String userID;
+private String wishListName;
+private List<String> books = new ArrayList<>();
 
+public WishList(String userID, String wishListName) {
+    super();
+    this.userID = userID;
+    this.wishListName = wishListName;
+}
 
+    public void addBook(String title) {
+        this.books.add(title);
+    }
 }
