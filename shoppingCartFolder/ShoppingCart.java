@@ -1,54 +1,22 @@
-package shoppingCartFolder;
+package com.group_3.restful_group_3_project.shoppingCartFolder;
 
-import java.util.List;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-import com.group_3.restful_group_3_project.bookFolder.Book;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
 
-@Data 
-@NoArgsConstructor 
-@AllArgsConstructor 
-@Document(collection = "shopping_carts")
+import java.util.List;
+
+import org.springframework.data.annotation.Id;
+
+import com.group_3.restful_group_3_project.bookFolder.Book;
+
+@Data // Lombok annotation to create all the getters, setters, equals, hash, and toString methods
+@NoArgsConstructor // Lombok annotation to create a no args constructor
+@AllArgsConstructor // Lombok annotation to create a all args constructor
+
 public class ShoppingCart {
-    @Id
-    private String userID;
+    @Id  // Annotation to specify the primary key of the document
+    private String id;
     private double subTot;
-    private List<Book> books;
-
-    public ShoppingCart(String userID, double subTot, List<Book> books) {
-        this.userID = userID;
-        this.subTot = subTot;
-        this.books = books;
-    }
-
-    public String getUserID() {
-        return userID;
-    }
-
-    public void setUserID(String userID) {
-        this.userID = userID;
-    }
-
-    public double getSubTot() {
-        return subTot;
-    }
-
-    public void setSubTot(double subTot) {
-        this.subTot = subTot;
-    }
-
-    public List<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(List<Book> books) {
-        this.books = books;
-    }
-
-    public void addItem(Book book) {
-        books.add(book);
-    }
+    private List<Book> book;
 }
