@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor // Lombok annotation to create a no args constructor
 @AllArgsConstructor // Lombok annotation to create a all args constructor
 public class Rating {
-    @Id // Annotation to specify the primary key of the document
-    private String _id;
+    
+    private String userID;
     
     private LocalDate ratedOn;
     private int starRating;
