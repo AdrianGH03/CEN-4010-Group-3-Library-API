@@ -2,7 +2,6 @@ package com.group_3.restful_group_3_project.reviewFolder;
 
 import java.util.List;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,8 +23,7 @@ private ReviewService reviewService;
 	public ReviewController(ReviewService reviewService) {
 		this.reviewService = reviewService;
 	}
-			
-	
+				
 	@GetMapping(path="books/{isbn}")
 	public Book retrieveBook(@PathVariable String isbn) {
 		return reviewService.findByIsbn(isbn);
@@ -48,10 +46,19 @@ private ReviewService reviewService;
 		if (!comments.isEmpty()) {
 			return ResponseEntity.ok(comments);
 		}
-		 return ResponseEntity.status(HttpStatus.NO_CONTENT).body("This book has no comments");
+		 return ResponseEntity.ok("This book has no comments");
 	 }
+	
+	
+	@GetMapping(path="books/{isbn}/aveRating")
+	public ResponseEntity<?> getAverage(@PathVariable String isbn){
+		double averageRating = reviewService.retrieveRatingsService(isbn);
+		if(averageRating > 0) {
+			return ResponseEntity.ok(averageRating);
+		}
+		return ResponseEntity.ok("This book has not been rated");
+	}
 	
 
 	
 }
-
