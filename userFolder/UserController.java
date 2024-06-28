@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController // Annotation to specify that this class is a controller and will hold the endpoints (CRUD operations)
 @RequestMapping("/authentication") // Endpoint to access authentication for users in MongoDB (i.e. http://localhost:8080/authentication)
@@ -20,8 +21,9 @@ public class UserController {
 
     //Signup
     @PostMapping("/signup")
-    public ResponseEntity<User> createUser(@RequestBody User user){
-        return new ResponseEntity<User>(userService.createUser(user), HttpStatus.CREATED);
+    public ResponseEntity<String> createUser(@RequestBody User user){
+        userService.createUser(user);
+        return new ResponseEntity<>("User created successfully", HttpStatus.CREATED);
     }
 
     //Login
@@ -36,6 +38,11 @@ public class UserController {
         return new ResponseEntity<Optional<User>>(userService.singleUser(username), HttpStatus.OK);
     }
 
+    @PutMapping("/user/{username}")
+    public ResponseEntity<String> updateUser(@PathVariable String username, @RequestBody User newUser){
+        userService.updateUser(username, newUser);
+        return new ResponseEntity<>("User updated successfully", HttpStatus.OK);
+    }
 
 
 

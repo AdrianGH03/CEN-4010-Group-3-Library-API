@@ -2,6 +2,7 @@ package com.group_3.restful_group_3_project.userFolder;
 
 import java.util.ArrayList;
 import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,12 +31,18 @@ public class UserService {
         User newUser = new User();
 
         try {
-            newUser.setUserID(user.getUsername()+"123"); // will show as _id in MongoDB but can still use userID in code
-            newUser.setUsername(user.getUsername());
-            newUser.setPassword(user.getPassword());
-            newUser.setEmail(user.getEmail());
-            newUser.setWishlist(new ArrayList<>()); 
-            //User still needs credit card in future...
+            if(userRepository.findUserByEmail(user.getEmail()).isPresent()){
+                throw new IllegalStateException("Email already exists");
+            } else if(userRepository.findUserByUsername(user.getUsername()).isPresent()){
+                throw new IllegalStateException("Username already exists");
+            } else {
+                newUser.setUserID(UUID.randomUUID().toString()); // will show as _id in MongoDB but can still use userID in code and uses UUID to generate a random ID
+                newUser.setUsername(user.getUsername());
+                newUser.setPassword(user.getPassword());
+                newUser.setEmail(user.getEmail());
+                newUser.setWishlist(new ArrayList<>()); 
+                //User still needs credit card in future...
+            }
 
             return userRepository.save(newUser); 
         } catch (Exception e) {
@@ -59,6 +66,35 @@ public class UserService {
             } else {
                 throw new IllegalStateException("Incorrect password");
             }
+        } else {
+            throw new IllegalStateException("User does not exist");
+        }
+    }
+
+    public User updateUser(String username, User newUser){
+        Optional<User> existingUser = userRepository.findUserByUsername(username);
+        if(!UserValidation.isValidUsername(username) || !existingUser.isPresent()) throw new IllegalStateException("Invalid username");
+
+        if (existingUser.isPresent()) {
+            User user = existingUser.get();
+            if(newUser.getPassword() != null){
+                if(UserValidation.isValidPassword(newUser.getPassword()) && !newUser.getPassword().equals(user.getPassword())){
+                    user.setPassword(newUser.getPassword());
+                } else {
+                    throw new IllegalStateException("Invalid password or password length less than 8 characters or password is the same as the current password.");
+                }
+            } 
+            if(newUser.getUsername() != null){
+                if(!userRepository.findUserByUsername(newUser.getUsername()).isEmpty()){
+                    throw new IllegalStateException("Username already exists");
+                } else if(UserValidation.isValidUsername(newUser.getUsername()) && !newUser.getUsername().equals(user.getUsername())){
+                    user.setUsername(newUser.getUsername());
+                } else {
+                    throw new IllegalStateException("Invalid username or username is the same as the current username.");
+                }
+            } 
+            
+            return userRepository.save(user);
         } else {
             throw new IllegalStateException("User does not exist");
         }

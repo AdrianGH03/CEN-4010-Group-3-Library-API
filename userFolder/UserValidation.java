@@ -12,7 +12,7 @@ public class UserValidation {
     }
 
     public static boolean isValidUsername(String username) {
-        return username != null && !username.trim().isEmpty();
+        return username != null && !username.trim().isEmpty() && username.length() >= 3;
     }
 
     public static boolean isValidPassword(String password) {
