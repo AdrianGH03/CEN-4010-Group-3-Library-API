@@ -60,8 +60,21 @@ public class ReviewService {
     	}
         throw new NoSuchElementException("Book not Found");
     }
-
     
-
+    public double retrieveRatingsService(String isbn) {
+    	Book potentialBook = bookRepository.findByIsbn(isbn);
+    	if (potentialBook != null){
+    		List<Rating> ratings = potentialBook.getRatings();
+    		double sum = 0;
+    		if (!ratings.isEmpty()) {
+	    		for (Rating rating: ratings) {
+	    			sum += rating.getStarRating(); 
+	    		}
+	    		return sum/ratings.size();
+	    	}
+    		return 0;
+    	}
+    	throw new NoSuchElementException("Book not Found");	
+    }
     
 }
