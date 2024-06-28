@@ -25,56 +25,53 @@ public class ReviewService {
         return bookRepository.findByIsbn(isbn);       
     }
     
+    
     public void rateBookService(String isbn, Rating rating) {
-    	
-    	Book potentialBook = bookRepository.findByIsbn(isbn);
-    	if(potentialBook != null) {
-    		rating.setRatedOn(LocalDate.now());
-    		potentialBook.addRating(rating);
-    	    bookRepository.save(potentialBook);
-    	}else {
-    		throw new NoSuchElementException("Book not Found");
-    	}
+	Book potentialBook = getIfBookExists(isbn); 
+	rating.setRatedOn(LocalDate.now()); //set the rateOn field of the rating object to the system date
+	potentialBook.addRating(rating); //add a new rating to the rating field of the Book
+	bookRepository.save(potentialBook);
     }
+    
     
     public void leaveCommentService(String isbn, Comment comment) {
-
-    	Book potentialBook = bookRepository.findByIsbn(isbn);
-    	if(potentialBook != null) {
-    		comment.setRatedOn(LocalDate.now());
-    		potentialBook.addComment(comment);
-    	    bookRepository.save(potentialBook);
-    	}else {
-    		throw new NoSuchElementException("Book not Found");
-    	}
+    	Book potentialBook = getIfBookExists(isbn); 
+    	comment.setRatedOn(LocalDate.now()); //set the rateOn field of the comment object to the system date
+    	potentialBook.addComment(comment); //add a new rating to the comment field of the Book
+    	bookRepository.save(potentialBook);
     }
     
+        
     public List<Comment> retrieveCommentsService(String isbn){
-    	Book potentialBook = bookRepository.findByIsbn(isbn);
-    	if (potentialBook != null){
-    		List<Comment> bookComments = potentialBook.getComments();
-    		if (!bookComments.isEmpty()) {
-    			return bookComments;
-    		}
-    		return new ArrayList<>();
+    	List<Comment> bookComments = getIfBookExists(isbn).getComments();//gets a book comments field 
+    	if (!bookComments.isEmpty()) { //if comments field is not empty
+    		return bookComments; //return all the books comments
     	}
-        throw new NoSuchElementException("Book not Found");
+    	return new ArrayList<>();//if no comments exist return an empty list
     }
+    
     
     public double retrieveRatingsService(String isbn) {
-    	Book potentialBook = bookRepository.findByIsbn(isbn);
-    	if (potentialBook != null){
-    		List<Rating> ratings = potentialBook.getRatings();
-    		double sum = 0;
-    		if (!ratings.isEmpty()) {
-	    		for (Rating rating: ratings) {
-	    			sum += rating.getStarRating(); 
-	    		}
-	    		return sum/ratings.size();
+    	List<Rating> ratings = getIfBookExists(isbn).getRatings(); //gets a bok ratings field
+    	double sum = 0;
+    	if (!ratings.isEmpty()) { //if ratings field is not empty
+	    	for (Rating rating: ratings) {
+	    		sum += rating.getStarRating(); //sum the ratings
 	    	}
-    		return 0;
-    	}
-    	throw new NoSuchElementException("Book not Found");	
+	    	return sum/ratings.size(); // return the average
+	    }
+    	return 0;// if ratings field is empty return 0
     }
+    
+    
+    public Book getIfBookExists(String isbn) {
+    	Book potentialBook = bookRepository.findByIsbn(isbn);//check if there exists a book with a matching isbn in the database
+    	if (potentialBook == null){
+    		throw new NoSuchElementException("Book not Found");	//if no books match the isbn throw an exception
+    	}
+    	return potentialBook; //return a book if present in the database
+    }
+    
+ 
     
 }
