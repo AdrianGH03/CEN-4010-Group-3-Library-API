@@ -99,4 +99,19 @@ public class UserService {
             throw new IllegalStateException("User does not exist");
         }
     }
+
+
+    public void addCreditCardToUser(String username, CreditCard creditCard) {
+        String validationResponse = UserValidation.isValidCreditCard(creditCard);
+        if (!"Valid".equals(validationResponse)) {
+            throw new IllegalStateException(validationResponse);
+        }
+        Optional<User> existingUser = userRepository.findUserByUsername(username);
+        if (!existingUser.isPresent()) {
+            throw new IllegalStateException("User does not exist");
+        }
+        User user = existingUser.get();
+        user.setCreditCard(creditCard);
+        userRepository.save(user);
+    }
 }

@@ -20,6 +20,5 @@ public class CreditCard {
     private String expirationDate;
     private String securityCode;
     private String cardHolderName;
-    private String cardType;
     private String cardProvider;
 }

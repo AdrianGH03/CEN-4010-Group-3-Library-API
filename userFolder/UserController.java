@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController // Annotation to specify that this class is a controller and will hold the endpoints (CRUD operations)
 @RequestMapping("/authentication") // Endpoint to access authentication for users in MongoDB (i.e. http://localhost:8080/authentication)
@@ -38,10 +38,16 @@ public class UserController {
         return new ResponseEntity<Optional<User>>(userService.singleUser(username), HttpStatus.OK);
     }
 
-    @PutMapping("/user/{username}")
+    @PutMapping("/update-user/{username}")
     public ResponseEntity<String> updateUser(@PathVariable String username, @RequestBody User newUser){
         userService.updateUser(username, newUser);
         return new ResponseEntity<>("User updated successfully", HttpStatus.OK);
+    }
+
+    @PostMapping("/add-credit-card/{username}")
+    public ResponseEntity<String> addCreditCardToUser(@PathVariable String username, @RequestBody CreditCard creditCard) {
+        userService.addCreditCardToUser(username, creditCard);
+        return new ResponseEntity<>("Credit card added successfully", HttpStatus.OK);
     }
 
 
