@@ -1,4 +1,4 @@
-package com.group_3.restful_group_3_project.shoppingCartFolder;
+package shoppingcartfolder;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
