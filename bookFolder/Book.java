@@ -119,7 +119,7 @@ public class Book {
                 + ", description=" + description + "]";
     }
 
-    // Add a method to calculate the average rating
+    // Method to calculate the average rating
     public double calculateAverageRating() {
         if (ratings == null || ratings.isEmpty()) {
             return 0;
@@ -131,14 +131,14 @@ public class Book {
         return sum / ratings.size();
     }
 
-    // Add a method to add a rating
+    // Method to add a rating
     public void addRating(Rating rating) {
         if (this.ratings != null) {
             this.ratings.add(rating);
         }
     }
 
-    // Add a method to add a comment
+    // Method to add a comment
     public void addComment(Comment comment) {
         if (this.comments != null) {
             this.comments.add(comment);
