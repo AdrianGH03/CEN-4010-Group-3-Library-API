@@ -1,78 +1,123 @@
 package com.group_3.restful_group_3_project;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.List;
+
+@Document(collection = "books")
 public class Book {
-        @Id   
-	private String ISBN; 
-	private String id;
-	private String title;
-	private String genre;
-	private String publisher;
-	private double price;
-	private int copiesSold;
-	private List<Rating> ratings;
-	
-	public Book() {}
 
-	public String getTitle() {
-		return title;
-	}
+    @Id
+    private String id;
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    private String ISBN;
+    private String title;
+    private String genre;
+    private String publisher;
+    private double price;
+    private int copiesSold;
+    private List<Rating> ratings;
+    private int yearPublished;
+    private String author;
+    private String description;
 
-	public String getGenre() {
-		return genre;
-	}
+    public Book() {}
 
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
+    public String getISBN() {
+        return ISBN;
+    }
 
-	public String getPublisher() {
-		return publisher;
-	}
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
 
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public double getPrice() {
-		return price;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public void setPrice(double price) {
-		this.price = price;
-	}
+    public String getGenre() {
+        return genre;
+    }
 
-	public int getCopiesSold() {
-		return copiesSold;
-	}
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
 
-	public void setCopiesSold(int copiesSold) {
-		this.copiesSold = copiesSold;
-	}
+    public String getPublisher() {
+        return publisher;
+    }
 
-	public String getISBN() {
-		return IBSN;
-	}
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
 
-	public void setIBSN(String iSBN) {
-		ISBN = iSBN;
-	}
+    public double getPrice() {
+        return price;
+    }
 
-	public List<Rating> getRatings() {
-		return ratings;
-	}
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
-	public void setRatings(List<Rating> ratings) {
-		this.ratings = ratings;
-	}
+    public int getCopiesSold() {
+        return copiesSold;
+    }
 
-	@Override
-	public String toString() {
-		return "Book [id=" + id + ", title=" + title + ", genre=" + genre + ", publisher=" + publisher + ", price="
-				+ price + ", copiesSold=" + copiesSold + ", ISBN=" + ISBN + "]";
-	}
+    public void setCopiesSold(int copiesSold) {
+        this.copiesSold = copiesSold;
+    }
 
+    public List<Rating> getRatings() {
+        return ratings;
+    }
+
+    public void setRatings(List<Rating> ratings) {
+        this.ratings = ratings;
+    }
+
+    public int getYearPublished() {
+        return yearPublished;
+    }
+
+    public void setYearPublished(int yearPublished) {
+        this.yearPublished = yearPublished;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id='" + id + '\'' +
+                ", ISBN='" + ISBN + '\'' +
+                ", title='" + title + '\'' +
+                ", genre='" + genre + '\'' +
+                ", publisher='" + publisher + '\'' +
+                ", price=" + price +
+                ", copiesSold=" + copiesSold +
+                ", ratings=" + ratings +
+                ", yearPublished=" + yearPublished +
+                ", author='" + author + '\'' +
+                ", description='" + description + '\'' +
+                '}';
+    }
 }
