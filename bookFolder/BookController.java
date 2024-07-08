@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/books")
@@ -19,17 +19,6 @@ public class BookController {
     @Autowired
     public BookController(BookService bookService) {
         this.bookService = bookService;
-    }
-     public List<Book> getAllBooks() {
-        return bookRepository.findAll();
-    }
-
-    public List<Book> getBooksByPublisher(String publisher) {
-        return bookRepository.findByPublisher(publisher);
-    }
-
-    public void updateBook(Book book) {
-        bookRepository.save(book);
     }
     
     @PostMapping
@@ -51,6 +40,27 @@ public class BookController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+
+    @GetMapping("/rating/{rating}")
+    public ResponseEntity<List<Book>> getBooksByRating(@PathVariable double rating) {
+        List<Book> books = bookService.getAllBooks();
+        List<Book> filteredBooks = books.stream()
+                .filter(book -> book.calculateAverageRating() >= rating)
+                .collect(Collectors.toList());
+        return new ResponseEntity<>(filteredBooks, HttpStatus.OK);
+    }
+
+    @PutMapping("/discount")
+    public ResponseEntity<Void> discountBooksByPublisher(@RequestParam String publisher, @RequestParam double discountPercent) {
+        List<Book> books = bookService.getBooksByPublisher(publisher);
+        books.forEach(book -> {
+            double newPrice = book.getPrice() * (1 - discountPercent / 100);
+            book.setPrice(newPrice);
+            bookService.updateBook(book);
+        });
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException ex) {
