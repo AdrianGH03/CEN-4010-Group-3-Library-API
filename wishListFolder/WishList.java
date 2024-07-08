@@ -23,6 +23,10 @@ public WishList(String userID, String wishListName) {
 }
 
     public void addBook(String title) {
-        this.books.add(title);
+        if (title != null && !title.isEmpty()) {
+            this.books.add(title);}
+             
+    }else {
+            throw new IllegalArgumentException("Title cannot be null or empty");
     }
 }
