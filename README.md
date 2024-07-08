@@ -108,7 +108,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 **Authors**
 
 - Janaii Eugene
-- Fatasha Edwards
+- Fantasha Edwards
 - Lathalia Faison
 - Alejandra Dutton
 - Miguel Adrian Gomez
