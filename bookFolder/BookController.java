@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/books")
@@ -17,6 +20,17 @@ public class BookController {
     public BookController(BookService bookService) {
         this.bookService = bookService;
     }
+     public List<Book> getAllBooks() {
+        return bookRepository.findAll();
+    }
+
+    public List<Book> getBooksByPublisher(String publisher) {
+        return bookRepository.findByPublisher(publisher);
+    }
+
+    public void updateBook(Book book) {
+        bookRepository.save(book);
+    }
     
     @PostMapping
     public ResponseEntity<Book> addBook(@RequestBody Book book) {
@@ -26,7 +40,8 @@ public class BookController {
         Book savedBook = bookService.addBook(book);
         return new ResponseEntity<>(savedBook, HttpStatus.CREATED);
     }
-    
+ 
+}
     @GetMapping("/{isbn}")
     public ResponseEntity<Book> getBookByIsbn(@PathVariable String isbn) {
         Book book = bookService.getBookByIsbn(isbn);
