@@ -14,7 +14,7 @@ public class Book {
     private String publisher;
     private double price;
     private int copiesSold;
-    private Rating aveRating; 
+    private List<Rating> rating; //Added list for comments
     private List<Comment> comments; // Added list for comments
     private int yearPublished;
     private String author;
@@ -119,7 +119,24 @@ public class Book {
                 + ", description=" + description + "]";
     }
 
+  // Add a method to calculate the average rating
+    public double calculateAverageRating() {
+        if (ratings == null || ratings.isEmpty()) {
+            return 0;
+        }
+        double sum = 0;
+        for (Rating rating : ratings) {
+            sum += rating.getStarRating();
+        }
+        return sum / ratings.size();
+    }
 
+    // Add a method to add a rating
+    public void addRating(Rating rating) {
+        if (this.ratings != null) {
+            this.ratings.add(rating);
+        }
+    }
     // Method to add a rating
     public void addRating(Rating rating) {
         if (this.ratings != null) {
