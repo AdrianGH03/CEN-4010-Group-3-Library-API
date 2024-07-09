@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController // Annotation to specify that this class is a controller and will hold the endpoints (CRUD operations)
@@ -20,8 +21,9 @@ public class UserController {
 
     //Signup
     @PostMapping("/signup")
-    public ResponseEntity<User> createUser(@RequestBody User user){
-        return new ResponseEntity<User>(userService.createUser(user), HttpStatus.CREATED);
+    public ResponseEntity<String> createUser(@RequestBody User user){
+        userService.createUser(user);
+        return new ResponseEntity<>("User created successfully", HttpStatus.CREATED);
     }
 
     //Login
@@ -36,6 +38,17 @@ public class UserController {
         return new ResponseEntity<Optional<User>>(userService.singleUser(username), HttpStatus.OK);
     }
 
+    @PutMapping("/update-user/{username}")
+    public ResponseEntity<String> updateUser(@PathVariable String username, @RequestBody User newUser){
+        userService.updateUser(username, newUser);
+        return new ResponseEntity<>("User updated successfully", HttpStatus.OK);
+    }
+
+    @PostMapping("/add-credit-card/{username}")
+    public ResponseEntity<String> addCreditCardToUser(@PathVariable String username, @RequestBody CreditCard creditCard) {
+        userService.addCreditCardToUser(username, creditCard);
+        return new ResponseEntity<>("Credit card added successfully", HttpStatus.OK);
+    }
 
 
 
