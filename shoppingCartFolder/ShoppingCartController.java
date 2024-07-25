@@ -45,10 +45,10 @@ return shoppingCartService.getBooksInCart(userID);
 @DeleteMapping("/removeBook/{userID}/{isbn}")
 public ResponseEntity<String> removeBookFromCart(@PathVariable String userID, @PathVariable String isbn) {
 try {
-shoppingCartService.removeBookFromCart(userID, isbn);
-return ResponseEntity.ok("Book removed from cart successfully");
+    shoppingCartService.removeBookFromCart(userID, isbn);
+    return ResponseEntity.ok("Book removed from cart successfully");
 } catch (RuntimeException e) {
-return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
+    return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
 }
 }
 
